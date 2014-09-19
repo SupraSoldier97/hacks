@@ -1,0 +1,8 @@
+sleep 1
+t app appmode video
+sleep 1
+t app default_settings 1920x1080 30p 16:9
+sleep 1
+t app default_mode video
+sleep 1
+t app button shutter PR
