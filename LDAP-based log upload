@@ -1,0 +1,26 @@
+#!/bin/bash
+
+echo -e "Insert SD card into your computer, then press ENTER"
+read ENTER
+
+function user_id {
+echo -e "Enter your LDAP, or name of laptop"
+read LDAP
+echo -e "Enter the FLIGHT ID"
+read FLIGHT_ID
+echo -e "You are $LDAP uploading video logs for $FLIGHT_ID correct? y/n "
+read answer
+}
+
+function upload {
+if [[ $answer = *y* ]]; then
+echo "Uploading logs to folder.."
+sudo cp -R /Volumes/UNTITLED /Users/$LDAP/Desktop/fake
+elif [[ $answer == *n* ]]; then
+user_id
+fi
+}
+
+
+user_id
+upload
